@@ -1,11 +1,28 @@
-import React from 'react'
+'use client'
+
+import Announcements from '@/components/Announcements';
+import BigCalendar from '@/components/BigCalendar';
+import EventCalendar from '@/components/EventCalendar';
+import React from 'react';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 function StudentPage() {
   return (
-    <div>StudentPage
-    
+    <div className='p-4 flex gap-4 flex-col xl:flex-row'>
+      {/* LEFT */}
+      <div className='w-full xl:w-2/3 flex flex-col gap-8'>
+        <div className='h-full bg-white rounded-md p-4'>
+          <h1 className='text-lg font-semibold'>Schedule (6.V)</h1>
+          <BigCalendar />
+        </div>
+      </div>
+      {/* RIGHT */}
+      <div className='w-full xl:w-1/3 flex flex-col gap-8 '>
+        <EventCalendar />
+        <Announcements />
+      </div>
     </div>
-  )
+  );
 }
 
-export default StudentPage
+export default StudentPage;
