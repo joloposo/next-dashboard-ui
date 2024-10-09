@@ -3,7 +3,6 @@
 import Announcements from '@/components/Announcements';
 import BigCalendar from '@/components/BigCalendar';
 import React from 'react';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 function ParentPage() {
   return (
