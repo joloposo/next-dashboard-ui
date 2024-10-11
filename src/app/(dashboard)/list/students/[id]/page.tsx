@@ -2,7 +2,9 @@
 
 import Announcements from '@/components/Announcements';
 import BigCalendar from '@/components/BigCalendar';
+import FormModal from '@/components/FormModal';
 import Performance from '@/components/Performance';
+import { role } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -28,7 +30,30 @@ function SingleStudentPage() {
               />
             </div>
             <div className='w-2/3 flex flex-col justify-between gap-4'>
+              
+              <div className="flex items-center gap-4">
               <h1 className='text-xl font-semibold'>Etta Parker</h1>
+                {role === "admin" && (
+                  <FormModal
+                    type="update"
+                    table="teacher"
+                    data={{
+                      id: 1,
+                      username: "1234567890",
+                      password: "password",
+                      firstName: "John",
+                      lastName: "Doe",
+                      email: "john@doe.com",
+                      img:
+                        "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                      phone: "1234567890",
+                      birthday: "2000-01-01",
+                      bloodType: "A+",
+                      address: "1234 Elm Street",
+                    }}
+                  />
+                )}
+              </div>
               <p className='text-sm text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
               <div className='flex items-center justify-between  gap-2 flex-wrap text-xs font-medium'>
                 <div className='w-full flex gap-2 items-center md:w-1/3 lg:w-full 2xl:w-[48%]'>
